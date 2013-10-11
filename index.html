@@ -1,11 +1,9 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap 101 Template</title>
+    <title>Wikilinks</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
@@ -14,13 +12,32 @@
         <script src="../../assets/js/html5shiv.js"></script>
         <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
+
+
+    <link href="css/custom.css" rel="stylesheet" media="screen">
 </head>
 <body>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>Wikilinks</h1>
+    <h3>Cruising on the coattails of wikileaks.</h3>
+  </div>
+</div>
+
 <div class="container">
     <div class="row">
-        <div class="col-md-5">Input 1</div>
-        <div class="col-md-2"><h1>VS.</h1></div>
-        <div class="col-md-5">Input 1</div>
+        <div class="col-md-5"><input type="text" class="form-control page-input" name="page1" /></div>
+        <div class="col-md-2" id="jumbo-vs"><h1>VS.</h1></div>
+        <div class="col-md-5"><input type="text" class="form-control page-input" name="page2" /></div>
+    </div>
+    <div class="row">
+        <div id="results">
+            <!-- This is where the output will go. -->
+            <div class="col-md-4" id="p1-only">Page one info only</div>
+            <div class="col-md-4" id="common-retults">Common links</div>
+            <div class="col-md-4" id="p2-only">Page one info only</div>
+        </div>
     </div>
 </div>
 
