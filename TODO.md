@@ -8,5 +8,3 @@
 
 - Language
 	- Python vs PHP vs Ruby vs Node.js
-	- Front end framework
-		- Bootstrap vs Foundation vs Boilerplate vs Pure vs Workless
