@@ -2,7 +2,7 @@
 	header("Content-Type: text/plain");
 	$p = explode('|', $_GET['p']);
 	foreach ($p as $page) {
-		print_r(json_decode(file_get_contents('http://en.wikipedia.org/w/api.php?format=json&action=query&titles='.$page.'&prop=links&pllimit=500'),true));
+		//print_r(json_decode(file_get_contents('http://en.wikipedia.org/w/api.php?format=json&action=query&titles='.$page.'&prop=links&pllimit=500'),true));
 	}
 
 
@@ -10,7 +10,10 @@
 		$link_titles = array();
 		foreach ($array as $key => $value) {
 			if(is_array($value)) {
-				extract_titles($value);
+				$rec_arr = extract_titles($value);
+				foreach ($rec_arr as $elt) {
+					array_push($link_titles, $elt);
+				}
 			} else {
 				if($key == "title") {
 					#echo $key." = ".$value."\n";
@@ -18,13 +21,13 @@
 				}
 			}
 		}
-		#print_r($link_titles);
+		//print_r($link_titles);
 		return $link_titles;
 	}
 
 	// currently just using one hardcoded test page
 	$test_json = json_decode(file_get_contents('http://en.wikipedia.org/w/api.php?format=json&action=query&titles=Hello&prop=links&pllimit=500'),true);
-	print_r($test_json);
+	//print_r($test_json);
 
 	$extracted_titles = extract_titles($test_json);
 	print_r($extracted_titles);
@@ -42,5 +45,5 @@
 	}
 
 	$generated_links = generate_wikipedia_links($extracted_titles);
-	print_r($generated_links);
+	//print_r($generated_links);
 ?>
