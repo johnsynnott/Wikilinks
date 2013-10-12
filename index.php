@@ -33,18 +33,19 @@
                 <input type="text" class="form-control input-lg page-input" name="page[]" />
                 <input type="text" class="form-control input-lg page-input" name="page[]" />
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="addPageInput()"><span class="glyphicon glyphicon-plus"></span> Add Page</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="add-page-input-btn"><span class="glyphicon glyphicon-plus"></span> Add Page</button>
             <button type="submit" class="btn btn-success btn-lg btn-block">Compare <span class="glyphicon glyphicon-chevron-right"></span></button>
             </form>
         </div>
     </div>
 </div>
 
-<!-- Javascript for adding pages -->
-<script src="js/pages.js"></script>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<!-- Javascript for adding pages -->
+<script src="js/pages.js"></script>
 </body>
 </html>
