@@ -1,9 +1,21 @@
 <?php
 	header("Content-Type: text/plain");
 	$p = explode('|', $_GET['p']);
+	$titles_to_compare = array();
 	foreach ($p as $page) {
-		//print_r(json_decode(file_get_contents('http://en.wikipedia.org/w/api.php?format=json&action=query&titles='.$page.'&prop=links&pllimit=500'),true));
+		$titles_arr = json_decode(file_get_contents('http://en.wikipedia.org/w/api.php?format=json&action=query&titles='.$page.'&prop=links&pllimit=500'),true);
+
+		// Extract each page's link titles from the decoded JSON
+		$extracted_titles = extract_titles($titles_arr);
+		// Add the array of extracted titles to an array to be compared later.
+		array_push($titles_to_compare, $extracted_titles);
 	}
+
+	// Compare the array of extracted titles arrays.
+	$common_titles = compare_titles($titles_to_compare);
+	// Generate properly formatted Wikipedia links from the common titles.
+	$common_links = generate_wikipedia_links($common_titles);
+	print_r($common_links);
 
 
 	function extract_titles($array) {
@@ -16,21 +28,12 @@
 				}
 			} else {
 				if($key == "title") {
-					#echo $key." = ".$value."\n";
 					array_push($link_titles, $value);
 				}
 			}
 		}
-		//print_r($link_titles);
 		return $link_titles;
 	}
-
-	// currently just using one hardcoded test page
-	$test_json = json_decode(file_get_contents('http://en.wikipedia.org/w/api.php?format=json&action=query&titles=Hello&prop=links&pllimit=500'),true);
-	//print_r($test_json);
-
-	$extracted_titles = extract_titles($test_json);
-	print_r($extracted_titles);
 
 	function generate_wikipedia_links($titles) {
 		$links = array();
@@ -40,10 +43,11 @@
 			$link = $prefix.$suffix;
 			array_push($links, $link);
 		}
-		#print_r($links);
 		return $links;
 	}
 
-	$generated_links = generate_wikipedia_links($extracted_titles);
-	//print_r($generated_links);
+	function compare_titles($page_titles) {
+		return call_user_func_array("array_intersect", $page_titles);
+	}
 ?>
+
