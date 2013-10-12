@@ -28,11 +28,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4" id="page-form-container">
-            <form>
+            <form method="POST">
             <div id="page-inputs"></div>
             <button type="button" class="btn btn-primary btn-lg btn-block" id="add-page-input-btn"><span class="glyphicon glyphicon-plus"></span> Add Page</button>
             <button type="submit" class="btn btn-success btn-lg btn-block">Compare <span class="glyphicon glyphicon-chevron-right"></span></button>
             </form>
+        </div>
+        <div class="col-md-8">
+            <?php
+            print_r($_POST['page']);
+            ?>
         </div>
     </div>
 </div>
