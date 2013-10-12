@@ -27,16 +27,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-5"><input type="text" class="form-control page-input" name="page1" /></div>
-        <div class="col-md-2" id="jumbo-vs"><h1>VS.</h1></div>
-        <div class="col-md-5"><input type="text" class="form-control page-input" name="page2" /></div>
-    </div>
-    <div class="row">
-        <div id="results">
-            <!-- This is where the output will go. -->
-            <div class="col-md-4" id="p1-only">Page one info only</div>
-            <div class="col-md-4" id="common-retults">Common links</div>
-            <div class="col-md-4" id="p2-only">Page one info only</div>
+        <div class="col-md-4" id="page-form-container">
+            <input type="text" class="form-control input-lg page-input" name="page[]" />
+            <input type="text" class="form-control input-lg page-input" name="page[]" />
+            <button type="button" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-plus"></span> Add Page</button>
+            <button type="submit" class="btn btn-success btn-lg btn-block">Compare <span class="glyphicon glyphicon-chevron-right"></span></button>
         </div>
     </div>
 </div>
