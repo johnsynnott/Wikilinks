@@ -43,6 +43,19 @@
     </div>
 </div>
 
+<div class="footer">
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <ul class="nav navbar-nav">
+            <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-briefcase"></span> Terms of Service</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+        </ul>
+        <ul>
+            <li><p class="navbar-text navbar-right">Wikilinks &copy; 2013</p></li>
+        </ul>
+    </nav>
+</div>
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://code.jquery.com/jquery.js"></script>
