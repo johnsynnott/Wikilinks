@@ -1,3 +1,8 @@
+$(document).ready(function () {
+	appendPageInput(document.getElementById("page-inputs"));
+	appendPageInput(document.getElementById("page-inputs"));
+});
+
 $("#add-page-input-btn").click(function() {
 	appendPageInput(document.getElementById("page-inputs"));
 });

@@ -29,10 +29,7 @@
     <div class="row">
         <div class="col-md-4" id="page-form-container">
             <form>
-            <div id="page-inputs">
-                <input type="text" class="form-control input-lg page-input" name="page[]" />
-                <input type="text" class="form-control input-lg page-input" name="page[]" />
-            </div>
+            <div id="page-inputs"></div>
             <button type="button" class="btn btn-primary btn-lg btn-block" id="add-page-input-btn"><span class="glyphicon glyphicon-plus"></span> Add Page</button>
             <button type="submit" class="btn btn-success btn-lg btn-block">Compare <span class="glyphicon glyphicon-chevron-right"></span></button>
             </form>
