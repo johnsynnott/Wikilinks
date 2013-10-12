@@ -35,3 +35,20 @@ function removePageInput(e) {
 	e.removeChild(i)
 	inputs.pop();
 }
+
+$("#compare_pages_btn").click(function () {
+	var inputData = {};
+	for(var i = 0; i < inputs.length; i++) {
+		inputData[i] = $("#inp" + (i+1)).val();
+	}
+	console.log(inputData);
+
+	$.ajax({
+		type: "POST",
+		url: "api.php",
+		data: inputData
+	})
+		.done(function (msg) {
+			alert("AJAX request made. " + msg);
+		});
+});

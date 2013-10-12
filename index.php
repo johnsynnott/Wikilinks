@@ -28,11 +28,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4" id="page-form-container">
-            <form method="POST">
+            <form>
             <div id="page-inputs"></div>
             <button type="button" class="btn btn-primary btn-lg btn-block" id="add-page-input-btn"><span class="glyphicon glyphicon-plus"></span> Add Page</button>
             <button type="button" class="btn btn-danger btn-lg btn-block" id="remove-page-input-btn"><span class="glyphicon glyphicon-remove"></span> Remove Page</button>
-            <button type="submit" class="btn btn-success btn-lg btn-block">Compare <span class="glyphicon glyphicon-chevron-right"></span></button>
+            <button type="button" class="btn btn-success btn-lg btn-block" id="compare_pages_btn">Compare <span class="glyphicon glyphicon-chevron-right"></span></button>
             </form>
         </div>
         <div class="col-md-8">
