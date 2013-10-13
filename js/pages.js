@@ -37,6 +37,9 @@ function removePageInput(e) {
 }
 
 $("#compare_pages_btn").click(function () {
+	
+	$("#results_panel").show();
+
 	var inputData = "pages=";
 	for(var i = 0; i < inputs.length; i++) {
 		inputData = inputData + $("#inp" + (i+1)).val();

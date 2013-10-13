@@ -12,3 +12,8 @@
 	margin-top: 10px;
 	margin-bottom: 50px;
 }
+
+#results_panel {
+	/*visibility: hidden;*/
+	margin-bottom: 70px;
+}
