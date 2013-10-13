@@ -51,7 +51,10 @@
 	}
 
 	function compare_titles($page_titles) {
-		return array_values(call_user_func_array('array_intersect', $page_titles));
+		$intersection = call_user_func_array('array_intersect', $page_titles);
+		$uniques = array_unique($intersection);
+		asort($uniques);
+		return array_values($uniques);
 	}
 
 	function create_results($common_links,$common_titles) {
