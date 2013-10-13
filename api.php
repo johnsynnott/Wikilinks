@@ -55,9 +55,14 @@
 	}
 
 	function create_results($common_links,$common_titles) {
+
+		$btn_colors = array("btn-primary", "btn-success", "btn-info", "btn-warning", "btn-danger");
+
 		$results = '';
 		foreach($common_links as $index => $link) {
-			$results = $results."<a href=".$link.">".$common_titles[$index]."</a><br/>";
+			//$btn_color = $btn_colors[array_rand($btn_colors)];
+			$btn_color = "btn-default";
+			$results = $results.'<a class="btn '.$btn_color.' btn-lg common-links" target="_blank" href='.$link.'>'.$common_titles[$index].'</a>';
 		}
 		return $results;
 	}
