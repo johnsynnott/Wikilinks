@@ -35,10 +35,17 @@
             <button type="button" class="btn btn-success btn-lg btn-block" id="compare_pages_btn">Compare <span class="glyphicon glyphicon-chevron-right"></span></button>
             </form>
         </div>
-        <div class="col-md-8">
-            <?php
-            print_r($_POST['page']);
-            ?>
+    </div>
+</div>
+
+<div class="container" id="results_panel_container">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="panel panel-default" id="results_panel">
+                <div class="panel-heading">Links in common:</div>
+                <div class="panel-body" id="results"></div>
+                <div class="panel-footer"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -63,5 +70,7 @@
 <script src="js/bootstrap.min.js"></script>
 <!-- Javascript for adding pages -->
 <script src="js/pages.js"></script>
+<!-- jQueryUI (for cool effects and such) -->
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 var inputs = new Array();
 
 $(document).ready(function () {
-	appendPageInput(document.getElementById("page-inputs"));
-	appendPageInput(document.getElementById("page-inputs"));
 	$("#remove-page-input-btn").hide();
+	appendPageInput(document.getElementById("page-inputs"));
+	appendPageInput(document.getElementById("page-inputs"));
 });
 
 $("#add-page-input-btn").click(function () {
@@ -37,9 +37,12 @@ function removePageInput(e) {
 }
 
 $("#compare_pages_btn").click(function () {
-	var inputData = {};
+	var inputData = "pages=";
 	for(var i = 0; i < inputs.length; i++) {
-		inputData[i] = $("#inp" + (i+1)).val();
+		inputData = inputData + $("#inp" + (i+1)).val();
+		if(i < inputs.length - 1) {
+			inputData = inputData + "|";
+		}
 	}
 	console.log(inputData);
 
@@ -49,6 +52,7 @@ $("#compare_pages_btn").click(function () {
 		data: inputData
 	})
 		.done(function (msg) {
-			alert("AJAX request made. " + msg);
+			$("#results").empty();
+			$("#results").append(msg);
 		});
 });

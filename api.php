@@ -1,8 +1,9 @@
 <?php
 	header("Content-Type: text/plain");
-	$p = explode('|', $_GET['p']);
+	$p = explode('|', $_POST['pages']);
 	$titles_to_compare = array();
 	foreach ($p as $page) {
+		$page = str_replace(' ', '_', $page);
 		$titles_arr = json_decode(file_get_contents('http://en.wikipedia.org/w/api.php?format=json&action=query&titles='.$page.'&prop=links&pllimit=500'),true);
 
 		// Extract each page's link titles from the decoded JSON
@@ -15,7 +16,10 @@
 	$common_titles = compare_titles($titles_to_compare);
 	// Generate properly formatted Wikipedia links from the common titles.
 	$common_links = generate_wikipedia_links($common_titles);
-	print_r($common_links);
+	// Create the results string to be returned by the AJAX request.
+	$results = create_results($common_links);
+	// Print out the results.
+	print_r($results);
 
 
 	function extract_titles($array) {
@@ -27,7 +31,7 @@
 					array_push($link_titles, $elt);
 				}
 			} else {
-				if($key == "title") {
+				if($key == 'title') {
 					array_push($link_titles, $value);
 				}
 			}
@@ -37,9 +41,9 @@
 
 	function generate_wikipedia_links($titles) {
 		$links = array();
-		$prefix = "http://en.wikipedia.org/wiki/";
+		$prefix = 'http://en.wikipedia.org/wiki/';
 		foreach ($titles as $title) {
-			$suffix = str_replace(" ", "_", $title);
+			$suffix = str_replace(' ', '_', $title);
 			$link = $prefix.$suffix;
 			array_push($links, $link);
 		}
@@ -47,7 +51,15 @@
 	}
 
 	function compare_titles($page_titles) {
-		return call_user_func_array("array_intersect", $page_titles);
+		return call_user_func_array('array_intersect', $page_titles);
+	}
+
+	function create_results($common_links) {
+		$results = '';
+		foreach($common_links as $link) {
+			$results = $results."<a href=".$link.">".$link."</a><br/>";
+		}
+		return $results;
 	}
 ?>
 

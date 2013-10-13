@@ -2,12 +2,13 @@
 	text-align: center;
 }
 
-
-
-
-
 .page-input {
 	/*font-size: 2.5em;
 	height: 2.2em;*/
 	margin-bottom: 10px;
+}
+
+#results_panel_container {
+	margin-top: 10px;
+	margin-bottom: 50px;
 }
