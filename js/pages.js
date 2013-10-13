@@ -38,7 +38,7 @@ function removePageInput(e) {
 
 $("#compare_pages_btn").click(function () {
 	
-	$("#results_panel").show();
+	$("#results-panel-header").html('<span class="glyphicon glyphicon-sort-by-alphabet"></span> Links in common');
 
 	var inputData = "pages=";
 	for(var i = 0; i < inputs.length; i++) {

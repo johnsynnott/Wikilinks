@@ -37,7 +37,7 @@
         </div>
         <div class="col-md-8">
             <div class="panel panel-default" id="results_panel">
-                <div class="panel-heading">Links in common:</div>
+                <div class="panel-heading" id="results-panel-header"><span class="glyphicon glyphicon-chevron-left"></span> Use the form on the left to select pages to compare.</div>
                 <div class="panel-body" id="results"></div>
                 <div class="panel-footer"></div>
             </div>

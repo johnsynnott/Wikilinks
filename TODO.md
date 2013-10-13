@@ -13,8 +13,11 @@
 		- Contact
 			- Implement form validation for the contact form.
 
-- Search statistics system
-	- Show most popular comparisons, etc.
+- Search
+	- Statistics system
+		- Show most popular comparisons, etc.
+	- Instant suggestions
 
+- More comments
 
 
