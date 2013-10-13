@@ -17,7 +17,7 @@
 	// Generate properly formatted Wikipedia links from the common titles.
 	$common_links = generate_wikipedia_links($common_titles);
 	// Create the results string to be returned by the AJAX request.
-	$results = create_results($common_links);
+	$results = create_results($common_links,$common_titles);
 	// Print out the results.
 	print_r($results);
 
@@ -51,13 +51,13 @@
 	}
 
 	function compare_titles($page_titles) {
-		return call_user_func_array('array_intersect', $page_titles);
+		return array_values(call_user_func_array('array_intersect', $page_titles));
 	}
 
-	function create_results($common_links) {
+	function create_results($common_links,$common_titles) {
 		$results = '';
-		foreach($common_links as $link) {
-			$results = $results."<a href=".$link.">".$link."</a><br/>";
+		foreach($common_links as $index => $link) {
+			$results = $results."<a href=".$link.">".$common_titles[$index]."</a><br/>";
 		}
 		return $results;
 	}
