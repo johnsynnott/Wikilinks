@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Wikilinks</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap -->
+	<title>Wikilinks | Contact Us</title>
+	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -20,39 +18,26 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>Wikilinks</h1>
-    <h3>Cruising on the coattails of wikileaks.</h3>
+    <h1>Contact Us</h1>
+    <h3>We'd <span class="glyphicon glyphicon-heart"></span> to hear from you!</h3>
   </div>
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-4" id="page-form-container">
-            <form>
-            <div id="page-inputs"></div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="add-page-input-btn"><span class="glyphicon glyphicon-plus"></span> Add Page</button>
-            <button type="button" class="btn btn-danger btn-lg btn-block" id="remove-page-input-btn"><span class="glyphicon glyphicon-remove"></span> Remove Page</button>
-            <button type="button" class="btn btn-success btn-lg btn-block" id="compare_pages_btn">Compare <span class="glyphicon glyphicon-chevron-right"></span></button>
-            </form>
-        </div>
+  <form>
+    <div class="page-inputs">
+    	<input type="text" class="form-control input-lg page-input" id="name" placeholder="Name"/>
+    	<input type="text" class="form-control input-lg page-input" id="email" placeholder="Email"/>
+    	<textarea class="form-control input-lg page-input" rows="10" id="message" placeholder="Message"></textarea>
+    	<button type="button" class="btn btn-primary btn-lg btn-block" id="add-page-input-btn"><span class="glyphicon glyphicon-send"></span> Send</button>
     </div>
-</div>
-
-<div class="container" id="results_panel_container">
-    <div class="row">
-        <div class="col-md-10">
-            <div class="panel panel-default" id="results_panel">
-                <div class="panel-heading">Links in common:</div>
-                <div class="panel-body" id="results"></div>
-                <div class="panel-footer"></div>
-            </div>
-        </div>
-    </div>
+  </form>
 </div>
 
 <div class="footer">
     <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
         <ul class="nav navbar-nav">
+        	<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-briefcase"></span> Terms of Service</a></li>
             <li><a href="contact.php"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
@@ -62,7 +47,6 @@
         </ul>
     </nav>
 </div>
-
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="http://code.jquery.com/jquery.js"></script>
