@@ -1,3 +1,8 @@
+- API
+	- Overflow protection
+	- Multiple output forms
+	- Keys?
+
 - Caching
     - Check for last edited API call
     - Build cache system (lol)
@@ -15,9 +20,12 @@
 
 - Search
 	- Statistics system
-		- Show most popular comparisons, etc.
+		- Most popular comparisons
+		- Most popular individual searches
+		- Over time / all time selection
 	- Instant suggestions
+		- Check for Wiki API call
 
 - More comments
 
-
+- Original color scheme
